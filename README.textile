@@ -9,7 +9,7 @@ After using CakeDC templates plugin, I realized that much of the generated code 
 h2. Requirements
 
 * PHP 4+
-* CakePHP 1.3+
+* CakePHP 2.0+
 
 h2. Installation
 
@@ -18,12 +18,12 @@ _[Manual]_
 # Download this: http://github.com/rodrigorm/crud/zipball/master
 # Unzip that download.
 # Copy the resulting folder to app/plugins
-# Rename the folder you just copied to @crud@
+# Rename the folder you just copied to @Crud@
 
 _[GIT Submodule]_
 
 In your app directory type:
-<pre><code>git submodule add git://github.com/rodrigorm/crud.git plugins/crud
+<pre><code>git submodule add git://github.com/rodrigorm/crud.git plugins/Crud
 git submodule init
 git submodule update
 </code></pre>
@@ -31,7 +31,7 @@ git submodule update
 _[GIT Clone]_
 
 In your plugin directory type
-<pre><code>git clone git://github.com/rodrigorm/crud.git crud</code></pre>
+<pre><code>git clone git://github.com/rodrigorm/crud.git Crud</code></pre>
 
 h2. Usage
 
