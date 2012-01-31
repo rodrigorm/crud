@@ -1,4 +1,6 @@
 <?php
+App::uses('ModelBehavior', 'Model');
+
 class CrudBehavior extends ModelBehavior {
 	public function view($Model, $id = null) {
 		return $this->_read($Model, $id);
@@ -24,7 +26,7 @@ class CrudBehavior extends ModelBehavior {
 		if ($Model->validates() && $Model->delete($id)) {
 			return true;
 		}
-		throw new Exception(sprintf(__('You need to confirm to delete this %s', true), $this->__humanizedAlias($Model)));
+		throw new RuntimeException(sprintf(__('You need to confirm to delete this %s'), $this->__humanizedAlias($Model)));
 	}
 
 	protected function _read($Model, $id) {
@@ -35,7 +37,7 @@ class CrudBehavior extends ModelBehavior {
 		));
 
 		if (empty($item)) {
-			throw new OutOfBoundsException(sprintf(__('Invalid %s', true), $this->__humanizedAlias($Model)));
+			throw new OutOfBoundsException(sprintf(__('Invalid %s'), $this->__humanizedAlias($Model)));
 		}
 
 		return $item;
@@ -53,7 +55,7 @@ class CrudBehavior extends ModelBehavior {
 			$Model->data = array_merge($data, $result);
 			return true;
 		} else {
-			throw new OutOfBoundsException(sprintf(__('Could not save the %s, please check your inputs.', true), $this->__humanizedAlias($Model)));
+			throw new OutOfBoundsException(sprintf(__('Could not save the %s, please check your inputs.'), $this->__humanizedAlias($Model)));
 		}
 	}
 
