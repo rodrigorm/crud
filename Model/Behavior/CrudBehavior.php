@@ -72,7 +72,6 @@ class CrudBehavior extends ModelBehavior {
 
 		$Model->set($item);
 		$Model->set($data);
-		$Model->set('field', 'invalid');
 
 		$result = $Model->save(null, true);
 
