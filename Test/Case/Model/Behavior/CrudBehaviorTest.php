@@ -4,9 +4,13 @@ App::uses('Security', 'Utility');
 App::uses('Model', 'Model');
 App::uses('BehaviorCollection', 'Model');
 
+class TestCrudBehavior extends Model {
+	public $useTable = false;
+}
+
 class CrudBehaviorTest extends CakeTestCase {
 	public function setUp() {
-		$this->Model = $this->getMock('Model', array('find', 'delete', 'save', 'create', 'validates'));
+		$this->Model = $this->getMock('TestCrudBehavior', array('find', 'delete', 'save', 'create', 'validates'));
 		$this->Model->name = 'Model';
 		$this->Model->alias = 'Model';
 		$this->Model->Behaviors = new BehaviorCollection();

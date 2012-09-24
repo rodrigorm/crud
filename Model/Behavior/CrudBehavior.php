@@ -70,6 +70,7 @@ class CrudBehavior extends ModelBehavior {
 			return $item;
 		}
 
+		unset($item[$Model->alias]['modified']);
 		$Model->set($item);
 		$Model->set($data);
 
